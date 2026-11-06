@@ -20,8 +20,19 @@
 .grid>.card a:focus-visible{outline:2px solid var(--lime);outline-offset:4px}
 @media(hover:none){.grid>.card:hover{transform:none}}
 @media(prefers-reduced-motion:reduce){.grid>.card,.grid>.card:before,.grid>.card .project-links a{transition:none}}
+
+/* Ghibli-inspired intro portrait */
+.hero-layout{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(260px,.85fr);align-items:center;gap:48px}
+.hero-copy{min-width:0}
+.hero-art{position:relative;justify-self:end;width:min(100%,350px);padding:10px;border:1px solid #b6f36b55;border-radius:26px;background:linear-gradient(145deg,#ffffff12,#ffffff03);box-shadow:0 24px 70px #0008,0 0 45px #b6f36b12;transform:rotate(2deg);animation:portrait-float 5s ease-in-out infinite}
+.hero-art img{display:block;width:100%;aspect-ratio:4/5;object-fit:cover;object-position:center;border-radius:18px}
+.art-glow{position:absolute;inset:12% -12% -10% 12%;z-index:-1;border-radius:32px;background:#b6f36b20;filter:blur(38px)}
+.art-caption{display:block;padding:11px 8px 3px;text-align:center;color:#cbd6c3;font-size:11px;letter-spacing:.06em}
+@keyframes portrait-float{0%,100%{translate:0 0;rotate:0deg}50%{translate:0 -10px;rotate:-1deg}}
+@media(max-width:700px){.hero-layout{grid-template-columns:1fr;gap:32px}.hero-art{justify-self:center;width:min(78%,310px)}}
+@media(prefers-reduced-motion:reduce){.hero-art{animation:none}}
 </style></head><body><div class="wrap"><nav><b><span class="mark">P</span><span class="wordmark">POOJIT<span>.</span></span></b><div><a href="#projects">Projects</a><a href="#about">About</a><a href="#contact">Contact</a></div></nav>
-<header class="hero"><div class="eyebrow">Developer · Builder · Learner</div><h1>Hi, I'm <em>Poojit.</em><br>I build for the web.</h1><p class="lead">I turn ideas into interactive web experiences — from productivity tools and learning apps to personal software projects. I’m continuously learning by building.</p><a class="btn primary" href="#projects">Explore my work ↗</a><a class="btn" href="https://github.com/notenoughsavvy" target="_blank">GitHub ↗</a></header>
+<header class="hero"><div class="hero-layout"><div class="hero-copy"><div class="eyebrow">Developer · Builder · Learner</div><h1>Hi, I'm <em>Poojit.</em><br>I build for the web.</h1><p class="lead">I turn ideas into interactive web experiences — from productivity tools and learning apps to personal software projects. I’m continuously learning by building.</p><a class="btn primary" href="#projects">Explore my work ↗</a><a class="btn" href="https://github.com/notenoughsavvy" target="_blank" rel="noopener noreferrer">GitHub ↗</a></div><div class="hero-art"><div class="art-glow"></div><img src="poojit-ghibli.gif" alt="Ghibli-inspired animated illustration of Poojit taking a mirror selfie" fetchpriority="high"><span class="art-caption">A little creativity, a lot of code ✦</span></div></div></header>
 <section id="projects"><div class="eyebrow">Selected work</div><h2>Projects I've built</h2><div class="grid">
 <div class="card"><div class="status">Current · In development</div><h3>WISH — Real-time Chat App</h3><p>React chat application prototype with user selection, authentication flow and cross-window message updates. Uses browser-side broadcast messaging; backend integration is planned.</p><div class="tags">React · JavaScript · Vite · Browser APIs</div></div>
 <div class="card"><div class="status">Web application</div><h3>BudgetGenie</h3><p>Expense and budget planner concept with account screens, transaction workflows, categories and dashboard summaries. Data persists in browser storage.</p><div class="tags">HTML · Tailwind CSS · JavaScript · localStorage</div><div class="project-links" style="display:flex;gap:14px;flex-wrap:wrap;margin-top:14px"><a href="https://notenoughsavvy.github.io/BudgetGenie/" target="_blank" rel="noopener noreferrer">Live Demo ↗</a><a href="https://github.com/notenoughsavvy/BudgetGenie" target="_blank" rel="noopener noreferrer">GitHub Repository ↗</a></div></div>
